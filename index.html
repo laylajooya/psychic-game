@@ -2,68 +2,31 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Psychic Game</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/reset.css">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
-    <script src="assets/javascript/game.js"></script>
 </head>
 
 <body>
     
-    <div>
+    <header>
         <h1>The Psychic Game</h1>
+    </header>
+    
+    <div>
+        <br>
         <p id="directions-text">Guess what letter I'm thinking of</p>
+        <br>
         <p id="wins-text"></p>
+        <br>
         <p id="losses-text"></p>
+        <br>
         <p id="guessesLeft-text"></p>
+        <br>
         <p id="guessesSoFar-text"></p>
     </div>
 
-<script type = "text/javascript">
-
-    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
-    "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-
-    var wins = 0;
-    var losses= 0;
-    var guessesLeft = 10;
-    var guessesSoFar = [];
-
-    var directionsText = document.getElementById ("directions-text");
-    var winsText = document.getElementById ("wins-text");
-    var lossesText = document.getElementById ("losses-text");
-    var guessesLeftText = document.getElementById ("guessesLeft-text");
-    var guessesSoFarText = document.getElementById ("guessesSoFar-text");
-    
-
-    document.onkeyup = function(event) {
-
-        var userGuess =  event.key;
-
-        var computerGuess = letters[Math.floor(Math.random() * letters.length)];
-
-        if (guessesLeft === 0) {
-            console.log("there is 0 guesses left. add a loss and restart game")
-            losses++; guessesLeft = 10; guessesSoFar = [];
-        } else {
-            guessesSoFar.push(userGuess);
-            console.log("user still has  " + guessesLeft + " guesses left.")
-            if (userGuess === computerGuess) {
-            wins++;
-            } else {
-            guessesLeft--;
-            }
-        }
-
-        winsText.textContent = "Wins: " + wins;
-        lossesText.textContent = "Losses: " + losses;
-        guessesLeftText.textContent = "Guesses Left: " + guessesLeft;
-        guessesSoFarText.textContent = "Your Guesses so far: " + guessesSoFar;
-    };
-    
-</script>
+<script src = "assets/javascript/game.js"></script>
     
 </body>
 </html>
