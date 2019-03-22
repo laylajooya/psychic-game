@@ -30,7 +30,7 @@ var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
             guessesSoFar.push(userGuess);
             console.log("user still has  " + guessesLeft + " guesses left.")
             if (userGuess === computerGuess) {
-            wins++; guessesLeft = 10;
+            wins++; guessesLeft = 10; guessesSoFar = [];
             } else {
             guessesLeft--;
             }
